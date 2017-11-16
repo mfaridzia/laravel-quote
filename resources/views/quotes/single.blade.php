@@ -10,7 +10,7 @@
                 <h2 class="title"> {{ $quote->title }} </h2>
                 <p>  {{ $quote->subject }} </p>
                 <p> Ditulis oleh : <a href="/profile/{{ $quote->user->id }}"> {{ $quote->user->name }} </a> </p>
-                <p> <a href="/quotes" class="btn btn-primary btn-lg"> Balik ke daftar </a> </p>
+                <p> <a href="/quotes" class="btn btn-primary btn-lg"> Balik Ke daftar </a> </p>
 
                <!--  ini bisa di refactor secara dinamis menggunakan fungsi components pada laravel -->
                 <div class="like_wrapper">

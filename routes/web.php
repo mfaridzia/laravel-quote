@@ -15,6 +15,7 @@ Route::group(['middleware' => 'auth'], function() {
 	//route fungsi system like pada quotes & comments
 	Route::get('/like/{type}/{model}', 'LikeController@like');
 	Route::get('/unlike/{type}/{model}', 'LikeController@unlike');
+	Route::get('/notifications', 'HomeController@getNotif');
 });
 
 Auth::routes();

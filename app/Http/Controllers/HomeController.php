@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\User;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,5 +39,13 @@ class HomeController extends Controller
         }
 
         return view('profile', compact('user'));
+    }
+
+    public function getNotif()
+    {
+        $user = Auth::user();
+        $notifications = Notification::where('user_id', $user->id)->orderBy('id', 'desc')->get();
+        $notif_model = new Notification;
+        return view('notification', compact('notifications', 'user', 'notif_model'));
     }
 }

@@ -12,4 +12,9 @@ class Notification extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function quote()
+    {
+        return $this->belongsTo('App\Models\Quote');
+    }
 }

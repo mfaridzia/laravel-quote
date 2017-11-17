@@ -28,11 +28,11 @@ class QuoteCommentController extends Controller
         // bagian notifikasi 
         if($quote->user->id != Auth::user()->id) {
             Notification::create([
-                'subject'  => 'ada komentar dari'. Auth::user()->name,
+                'subject'  => 'ada komentar dari '. Auth::user()->name,
                 'user_id'  => $quote->user->id,
                 'quote_id' => $id
             ]);
-        }
+        } 
 
         $request->session()->flash('message', 'Sukses submit komentar');
         return redirect('/quotes/'. $quote->slug);
